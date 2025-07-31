@@ -7,6 +7,16 @@
     "feature_1": "Easy and quick tracking",
     "feature_2": "Statistics and charts",
     "feature_3": "Reminders and notifications",
-    "footer_text": "All rights reserved."
+    "footer_text": "All rights reserved.",
+
+    "app_name": "Vnorme: Blood Pressure Diary",
+    "app_tagline": "Track and manage your blood pressure with ease.",
+    "mission_title": "Mission",
+    "mission_text": "To help people take care of their health by motivating them to regularly measure and track their blood pressure. We aim to ensure everyone can detect potential problems early and prevent serious illnesses.",
+    "values_title": "Values",
+    "values_text": "We believe that health is our most valuable asset, and regular blood pressure monitoring is key to maintaining it for years to come. Our app makes tracking and storing data simple, clear, and ready to share with your doctor. It’s a tool for those who want to live actively, feel confident, and keep their well-being under control.",
+    "vision_title": "Vision",
+    "vision_text": "We strive to make blood pressure monitoring a natural and effortless part of daily life for millions of people. Our app will become a trusted companion in preventing cardiovascular diseases, helping users and doctors make informed, timely decisions. We want everyone to have access to simple, clear, and useful tools for maintaining health.",
+    "contacts_title": "Contacts"
 }
 

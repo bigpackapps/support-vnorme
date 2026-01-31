@@ -112,3 +112,14 @@ footer {
 }
 .btn:hover { opacity: 0.95; }
 
+/* Ensure section headers align to top-left and sections are block-level */
+main > section h2 {
+  margin: 0 0 12px;   /* remove extra spacing */
+  text-align: left;
+}
+
+main > section {
+  display: block;
+  align-items: normal;
+}
+

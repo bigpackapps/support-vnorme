@@ -10,12 +10,19 @@
     <header>
         <img src="assets/vnorme_app_logo.png" alt="Vnorme Icon">
         <div class="lang-switch">
-            <button onclick="setLanguage('en')">EN</button>
-            <button onclick="setLanguage('ru')">RU</button>
+            <select id="lang-select" onchange="setLanguage(this.value)" aria-label="Language">
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
+            </select>
         </div>
     </header>
 
+    
+
     <main>
+        <section>
+            <h2 data-i18n="products_title"></h2>
+        </section>
         <!--
         <section class="intro">
             <h1 data-i18n="app_name"></h1>
@@ -40,7 +47,7 @@
 -->
             <!-- Products: 3 columns -->
         <section class="products">
-            <h2 data-i18n="products_title"></h2>
+            
             <div class="products-grid">
                 <article class="product">
                     <img src="assets/product_1.png" alt="" class="product-icon">
@@ -111,6 +118,10 @@
                         const title = prod.querySelector('h3');
                         if (img && title) img.alt = title.textContent.trim();
                     });
+
+                    // update select control if present
+                    const sel = document.getElementById('lang-select');
+                    if (sel) sel.value = lang;
                 })
                 .catch(err => {
                     console.error('Error loading language file:', err);

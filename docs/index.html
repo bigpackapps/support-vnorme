@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vnorme: Blood Pressure Diary</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
     <header>
-        <img src="assets/icon.png" alt="Vnorme Icon">
+        <img src="assets/vnorme_app_logo.png" alt="Vnorme Icon">
         <div class="lang-switch">
             <button onclick="setLanguage('en')">EN</button>
             <button onclick="setLanguage('ru')">RU</button>
@@ -16,11 +16,13 @@
     </header>
 
     <main>
+        <!--
         <section class="intro">
             <h1 data-i18n="app_name"></h1>
             <p data-i18n="app_tagline"></p>
         </section>
-
+        -->
+<!--
         <section>
             <h2 data-i18n="mission_title"></h2>
             <p data-i18n="mission_text"></p>
@@ -35,31 +37,83 @@
             <h2 data-i18n="vision_title"></h2>
             <p data-i18n="vision_text"></p>
         </section>
+-->
+            <!-- Products: 3 columns -->
+        <section class="products">
+            <h2 data-i18n="products_title"></h2>
+            <div class="products-grid">
+                <article class="product">
+                    <img src="assets/product_1.png" alt="" class="product-icon">
+                    <h3 data-i18n="product1_title"></h3>
+                    <p data-i18n="product1_desc"></p>
+                    <a class="btn" data-i18n="download_btn" data-href-key="product1_url" target="_blank" rel="noopener noreferrer"></a>
+                </article>
+
+                <article class="product">
+                    <img src="assets/product_2.png" alt="" class="product-icon">
+                    <h3 data-i18n="product2_title"></h3>
+                    <p data-i18n="product2_desc"></p>
+                    <a class="btn" data-i18n="download_btn" data-href-key="product2_url" target="_blank" rel="noopener noreferrer"></a>
+                </article>
+
+                <article class="product">
+                    <img src="assets/product_3.png" alt="" class="product-icon">
+                    <h3 data-i18n="product3_title"></h3>
+                    <p data-i18n="product3_desc"></p>
+                    <a class="btn" data-i18n="download_btn" data-href-key="product3_url" target="_blank" rel="noopener noreferrer"></a>
+                </article>
+            </div>
+        </section>
 
         <section>
             <h2 data-i18n="contacts_title"></h2>
             <p><strong>Email:</strong> <a href="mailto:support@vnorme.app">support@vnorme.app</a></p>
             <p><strong>Website:</strong> <a href="https://vnorme.app">vnorme.app</a></p>
         </section>
+
     </main>
 
-    <footer>
-        &copy; 2025 Vnorme. All rights reserved.
-    </footer>
-
-    <script>
+<script>
         let currentLang = 'en';
 
         function setLanguage(lang) {
-            fetch(`lang/${lang}.json`)
-                .then(res => res.json())
+            console.log('Loading language:', lang);
+            fetch(`./lang/${lang}.json`)
+                .then(res => {
+                    console.log('Response status:', res.status);
+                    if (!res.ok) {
+                        throw new Error(`HTTP Error: ${res.status}`);
+                    }
+                    return res.json();
+                })
                 .then(data => {
+                    console.log('Language data loaded:', data);
                     document.querySelectorAll('[data-i18n]').forEach(el => {
                         const key = el.getAttribute('data-i18n');
                         if (data[key]) {
                             el.innerHTML = data[key];
                         }
                     });
+
+                    // set links (App Store URLs) from i18n
+                    document.querySelectorAll('[data-href-key]').forEach(el => {
+                        const urlKey = el.getAttribute('data-href-key');
+                        if (data[urlKey]) {
+                            el.setAttribute('href', data[urlKey]);
+                        } else {
+                            el.setAttribute('href', '#');
+                        }
+                    });
+
+                    // set image alt from product title for accessibility
+                    document.querySelectorAll('.product').forEach(prod => {
+                        const img = prod.querySelector('img.product-icon');
+                        const title = prod.querySelector('h3');
+                        if (img && title) img.alt = title.textContent.trim();
+                    });
+                })
+                .catch(err => {
+                    console.error('Error loading language file:', err);
                 });
             currentLang = lang;
         }

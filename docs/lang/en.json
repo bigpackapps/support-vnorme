@@ -8,7 +8,6 @@
     "feature_2": "Statistics and charts",
     "feature_3": "Reminders and notifications",
     "footer_text": "All rights reserved.",
-
     "app_name": "Vnorme: Blood Pressure Diary",
     "app_tagline": "Track and manage your blood pressure with ease.",
     "mission_title": "Mission",
@@ -18,24 +17,18 @@
     "vision_title": "Vision",
     "vision_text": "We strive to make blood pressure monitoring a natural and effortless part of daily life for millions of people. Our app will become a trusted companion in preventing cardiovascular diseases, helping users and doctors make informed, timely decisions. We want everyone to have access to simple, clear, and useful tools for maintaining health.",
     "contacts_title": "Contacts",
-
     "download_btn": "Download",
     "products_title": "Our Products",
-
     "product1_title": "QR Code Creator Generator",
     "product1_desc": "Barcode scanner, reader, maker",
     "product1_url": "https://itunes.apple.com/app/id6755534981",
-
     "product2_title": "Blood Pressure Tracker Pulse",
     "product2_desc": "Heart rate monitor, Track BP",
     "product2_url": "https://itunes.apple.com/app/id6748574821",
-
     "product3_title": "WordPaw: Play & Solve Puzzle",
     "product3_desc": "Find Clues in Letter Boards",
     "product3_url": "https://itunes.apple.com/app/id6738197528",
-
     "product4_title": "Cockadoo: Task Manager & To Do",
     "product4_desc": "Shared tasks, events, planning",
-    "product4_url": "#"
+    "product4_url": "https://itunes.apple.com/app/id6760205503"
 }
-

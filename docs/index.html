@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vnorme: Blood Pressure Diary</title>
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body>
@@ -106,7 +106,7 @@
 
         function setLanguage(lang) {
             console.log('Loading language:', lang);
-            fetch(`./lang/${lang}.json`)
+            fetch(`./lang/${lang}.json?v=${Date.now()}`)
                 .then(res => {
                     console.log('Response status:', res.status);
                     if (!res.ok) {

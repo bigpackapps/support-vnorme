@@ -36,8 +36,11 @@
   "product5_url": "https://itunes.apple.com/app/id6800279451",
   "product6_title": "TradeGuard: Калькулятор Риска",
   "product6_desc": "Умный трекинг криптопортфеля и калькуляторы торговых рисков",
-  "product6_url": "#",
+  "product6_url": "https://itunes.apple.com/app/id6775216182",
   "product7_title": "PixyCut: Видеоредактор и Reels",
   "product7_desc": "Редактор видео, обрезка, монтаж и рилс",
-  "product7_url": "https://itunes.apple.com/app/id6806809296"
+  "product7_url": "https://itunes.apple.com/app/id6806809296",
+  "product8_title": "QR File Transfer - PixyMove",
+  "product8_desc": "Обмен файлами через QR-коды",
+  "product8_url": "https://itunes.apple.com/app/id6755534981"
 }
